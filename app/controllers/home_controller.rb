@@ -1,12 +1,13 @@
 class HomeController < ApplicationController
+  before_action ->{ @processed_time = Time.now }
+  
   def index
   end
-
+  
   def header
-    @processed_time = Time.now
     render :partial => "layouts/header"
   end
-
+  
   def footer
     render :partial => "layouts/footer"
   end
